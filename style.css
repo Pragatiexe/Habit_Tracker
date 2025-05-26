@@ -1,0 +1,55 @@
+body {
+  scroll-behavior: smooth;
+}
+
+/* History container styling */
+.habit-history {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+/* Habit section block */
+.habit-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #cedcf7; /* light border between rows */
+}
+
+/* Habit name styling */
+.habit-name {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  font-size: 1.1rem;
+}
+
+/* Box for each day's history */
+.habit-history div[title] {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  background-color: #e5e7eb; /* default gray (incomplete) */
+  transition: background-color 0.3s ease;
+  cursor: default;
+}
+
+/* Completed habit day */
+.habit-history div[title].done {
+  background-color: #54f0b7; /* green-400 */
+}
+
+/* Optional: Add hover effect */
+.habit-history div[title]:hover {
+  background-color: #10b981; /* darker green on hover */
+}
+
+/* Dark mode support */
+.dark .habit-history div[title] {
+  background-color: #374151; /* dark gray (incomplete) */
+}
+.dark .habit-history div[title].done {
+  background-color: #059669; /* green-600 for dark mode */
+} 

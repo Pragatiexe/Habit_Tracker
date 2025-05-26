@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Habit Tracker</title>
+    <script defer src="script.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="bg-blue-100 text-pink-900 dark:bg-gray-900 dark:text-gray-100">
+    <!-- Navbar -->
+    <nav class="bg-white dark:bg-gray-800 shadow fixed w-full z-10 top-0">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="flex justify-between items-center h-16">
+          <div class="text-5xl font-bold text-gray-800 dark:text-white">
+            Habit Tracker
+          </div>
+          <div class="md:hidden">
+            <button
+              id="menuToggle"
+              class="text-gray-800 dark:text-white focus:outline-none"
+            >
+              ☰
+            </button>
+          </div>
+          <div class="hidden md:flex space-x-4 items-center" id="navLinks">
+            <a href="#tracker" class="hover:text-blue-600">Tracker</a>
+            <a href="#info" class="hover:text-blue-600">Info</a>
+            <button
+              id="toggleDarkMode"
+              class="ml-4 bg-gray-200 dark:bg-gray-700 text-sm px-3 py-1 rounded"
+            >
+              🌙 Dark Mode
+            </button>
+          </div>
+        </div>
+
+        <div
+          id="mobileMenu"
+          class="md:hidden hidden flex-col space-y-2 mt-2 pb-4"
+        >
+          <a href="#tracker" class="block text-gray-800 dark:text-white">Tracker</a>
+          <a href="#info" class="block text-gray-800 dark:text-white">Info</a>
+          <button
+            id="toggleDarkModeMobile"
+            class="bg-gray-200 dark:bg-gray-700 text-sm px-3 py-1 rounded w-max"
+          >
+            🌙 Dark Mode
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Habit Tracker Section -->
+    <section id="tracker" class="pt-24 p-6 max-w-xl mx-auto">
+      <h2 class="text-3xl font-semibold mb-4 text-center">Track Your Habits</h2>
+      <div class="bg-white dark:bg-gray-800 p-6 rounded shadow">
+        <div class="flex gap-2 mb-4">
+          <input
+            type="text"
+            id="habitInput"
+            placeholder="Enter habit"
+            class="flex-1 border border-gray-300 dark:border-gray-700 p-2 rounded bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white"
+          />
+          <button
+            onclick="addHabit()"
+            class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
+          >
+            Add
+          </button>
+        </div>
+
+        <!-- Habit List Renders Here -->
+        <ul id="habitList" class="space-y-3 mt-4"></ul>
+
+        <!-- Longest Streak Section -->
+        <div
+          id="longestStreaks"
+          class="mt-6 p-4 bg-yellow-100 dark:bg-yellow-200 border-l-4 border-yellow-500 text-yellow-700 rounded"
+        ></div>
+      </div>
+    </section>
+
+    <!-- Habit History Section -->
+    <section
+      id="history"
+      class="pt-10 p-6 max-w-xl mx-auto bg-white dark:bg-gray-800 rounded shadow mt-8"
+    >
+      <h2 class="text-3xl font-semibold mb-4 text-center">Habit History</h2>
+      <div id="historyContainer" class="space-y-6"></div>
+    </section>
+
+    <!-- Info Section -->
+    <section
+      id="info"
+      class="p-6 bg-white dark:bg-gray-800 max-w-3xl mx-auto mt-12 rounded shadow"
+    >
+      <h2 class="text-3xl font-semibold mb-4 text-center">Why Track Habits?</h2>
+      <p class="text-lg leading-relaxed">
+        Building habits is essential for personal growth. Tracking helps maintain
+        consistency and build streaks that reinforce behavior. Stay motivated by
+        keeping your streak alive!
+      </p>
+    </section>
+  </body>
+</html>
